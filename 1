@@ -1,0 +1,87 @@
+using Microsoft.SqlServer.Server;
+using System;
+using System.CodeDom;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace teste_pra_asp_net
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string Quebra_Linha = "" +
+                "" +
+                "" +
+                "";
+            Console.WriteLine("********************************|Ola seja bem-vindo a aplicação de teste do Daniel .|********************************", Console.ForegroundColor = ConsoleColor.Blue);
+            Console.WriteLine(Quebra_Linha);
+            Console.ResetColor();
+            string tecla = ("                                        Aperte uma tecla para prosseguir.                                                    ");
+            
+
+            Console.Write("Para começarmos precisamos do seu nome: ");
+            string nome = Console.ReadLine();
+            Console.Write("Ola seja bem-vindo ");
+            Console.Write(nome);
+            Console.Write(". Agora precisamos da sua idade: ");
+            int idade = (Console.Read());          
+           
+            if (idade >= 18)
+            {
+                Console.Clear();   
+                Console.WriteLine("Acesso liberado voce é maior de idade.", Console.ForegroundColor = ConsoleColor.Green);
+                Console.WriteLine(Quebra_Linha);
+                Console.WriteLine(tecla);
+                Console.ReadLine();
+                Console.ResetColor();                
+            } else
+            {
+                Console.Clear();
+                Console.WriteLine("Ops parece que voce é menor de idade. ", Console.ForegroundColor = ConsoleColor.Red);                
+                Console.WriteLine("===============================================O programa ira encerrar. ================================================");
+                Console.ReadLine();
+                return;
+                
+            }
+            Console.WriteLine("Agora vamos Regsitrar sua entrada no sistema.", Console.ForegroundColor = ConsoleColor.Blue);
+            Console.ResetColor (); 
+         
+                Console.Clear();
+            Console.WriteLine("Agora vamos criar um nome para seu login", Console.ForegroundColor = ConsoleColor.Blue);
+            Console.ResetColor();
+            Console.Write("Favor Digite um nome de usuario: ");
+                string Usuario = Console.ReadLine();
+            Console.WriteLine("Agora vamos criar uma senha para seu login", Console.ForegroundColor = ConsoleColor.Blue);
+            Console.ResetColor();
+            Console.Write("Digite uma senha: ");
+            string senha = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Ola seja bem-vindo a tela de login.      ", Console.ForegroundColor = ConsoleColor.Blue);
+            Console.ResetColor();
+            Console.WriteLine(Quebra_Linha);
+            Console.ResetColor();
+            Console.Write("Digite o nome de usario: ");
+            string camp1 = Console.ReadLine();      
+            Console.Write("Digite sua senha: ");
+            string camp2 = Console.ReadLine();
+            if (camp1 == Usuario && camp2 == senha) 
+            {
+                Console.WriteLine("Parabens não ocorreu nenhum erros. ", Console.ForegroundColor = ConsoleColor.Blue);
+            } else
+            {
+                Console.WriteLine("Ops senha ou login incorreto. ", Console.ForegroundColor = ConsoleColor.Red);
+                Console.WriteLine("===============================================O programa ira encerrar. ================================================");
+                Console.ReadLine();    
+                return;
+            }
+            Console.ReadLine();
+        }
+    }
+}
